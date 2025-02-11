@@ -1,1 +1,1 @@
-export const url = 'http://localhost:3000/api/'
+export const url = 'https://schoolmanagementsystem-id5x.onrender.com/api/'
