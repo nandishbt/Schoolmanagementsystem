@@ -15,6 +15,7 @@ import { Routes, Route } from "react-router-dom";
 import Layout from "./Layout";
 import UpdateClassForm from "./pages/Class/UpdateClassRoom";
 import UpdateStudentForm from "./pages/Student/UpdateStudentForm";
+import UpdateTeacherForm from "./pages/Teacher/UpdateTeacherForm";
 const App = () => {
   return (
     <div className="min-h-screen">
@@ -31,6 +32,7 @@ const App = () => {
           <Route path="teachers" element={<AllTeachers />} />
           <Route path="teachers/create" element={<AddTeacher />} />
           <Route path="teachers/teacher/:email" element={<EachTeacher />} />
+          <Route path="teachers/teacher/edit/:email" element={<UpdateTeacherForm />} />
 
           <Route path="students" element={<AllStudents />}/>
           <Route path="students/create" element={<AddStudent />} />

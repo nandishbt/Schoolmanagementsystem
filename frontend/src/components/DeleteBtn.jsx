@@ -1,13 +1,13 @@
 import React from 'react'
 
-const DeleteBtn = ({name, color = 'blue', navigate = '/'}) => {
+const DeleteBtn = ({name, color = 'blue'}) => {
   return (
     <div>
         {/* Base */}
 
-<a
+<span
   className="group relative inline-block text-sm font-medium text-white focus:ring-3 focus:outline-hidden"
-  href={navigate}
+
 >
   <span className="absolute inset-0 border border-red-600"  style={{
     borderColor: color,
@@ -21,7 +21,7 @@ const DeleteBtn = ({name, color = 'blue', navigate = '/'}) => {
   >
     {name}
   </span>
-</a>
+</span>
 
 
 

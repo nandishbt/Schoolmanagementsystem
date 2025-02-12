@@ -7,6 +7,7 @@ import {
 } from "../../utils/api";
 
 import AdminCard from "../../components/adminCard";
+import FinancialChart from "../../components/FinancialChart ";
 
 const Admin = () => {
   const [data, setData] = useState({
@@ -49,6 +50,8 @@ const Admin = () => {
 
 
       </div>
+      <FinancialChart salaries={data.totalSalary} studentFees={data.totalFees} />
+
       
       
      

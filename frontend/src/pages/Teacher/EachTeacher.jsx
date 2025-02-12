@@ -29,36 +29,36 @@ const EachTeacher = () => {
     }
   };
 
-  const updateTeacherData = async (e) => {
-    e.preventDefault();
-    const formData = {
-      name: data?.teacher.name,
-      phone: data?.teacher.phone,
-      email: data?.teacher.email,
-      gender: data?.teacher.gender,
-      dob: data?.teacher.dob,
-      salary: data?.teacher.salary,
-      assignedSubject: data?.teacher.assignedSubject,
-    };
-    try {
-      const res = await updateTeacher(email, formData);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  // const updateTeacherData = async (e) => {
+  //   e.preventDefault();
+  //   const formData = {
+  //     name: data?.teacher.name,
+  //     phone: data?.teacher.phone,
+  //     email: data?.teacher.email,
+  //     gender: data?.teacher.gender,
+  //     dob: data?.teacher.dob,
+  //     salary: data?.teacher.salary,
+  //     assignedSubject: data?.teacher.assignedSubject,
+  //   };
+  //   try {
+  //     const res = await updateTeacher(email, formData);
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
 
-  const updateTeacherProfilePhoto = async () => {
-    try {
-      const res = await updateTeacherProfile(email, imageFile);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  // const updateTeacherProfilePhoto = async () => {
+  //   try {
+  //     const res = await updateTeacherProfile(email, imageFile);
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
 
   const deleteThisTeacher = async () => {
     try {
       const res = await deleteTeacher(email);
-      navigate(-1);
+      navigate('/');
     } catch (error) {
       console.error(error);
     }
@@ -151,6 +151,10 @@ const EachTeacher = () => {
         className="flex justify-center items-center bottom-5 fixed"
       >
         <DeleteBtn name={'DELETE'} color="red"/>
+      </div>
+
+      <div onClick={()=>navigate(`/teachers/teacher/edit/${data.teacher.email}`)}  className="flex justify-center items-center bottom-5 right-20 fixed">
+        <DeleteBtn name={'EDIT'} color="green"  />
       </div>
     </div>
   );

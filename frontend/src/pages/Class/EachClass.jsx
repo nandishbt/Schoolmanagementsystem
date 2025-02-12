@@ -4,9 +4,13 @@ import { Navigate, useNavigate, useParams } from "react-router-dom";
 import StudentCard from "../../components/StudentCard";
 import TeacherCard from "../../components/TeacherCard";
 import DeleteBtn from "../../components/DeleteBtn";
+import StudentGenderChart from "../../components/StudentGenderChart ";
 
 const EachClass = () => {
   const { grade } = useParams();
+
+  const [maleNo, setmaleNo] = useState(0)
+  const [femaleNo, setfemaleNo] = useState(0)
 
   const navigate = useNavigate()
 
@@ -23,6 +27,12 @@ const EachClass = () => {
       const res = await getOneClass(grade);
 
       const resData = await res.data;
+
+      const maleCount = resData?.studentList.filter((student) => student.gender == "male").length;
+      setmaleNo(maleCount)
+
+      const femaleCount = resData?.studentList.filter((student) => student.gender == "female").length;
+      setfemaleNo(femaleCount)
 
       setData(() => ({
         grade: resData?.grade,
@@ -62,6 +72,8 @@ const EachClass = () => {
     try {
       const res = await deleteClass(grade);
 
+      navigate('/')
+
       
     } catch (error) {
       console.error(error);
@@ -77,7 +89,7 @@ const EachClass = () => {
   return (
     <div className="w-[95vw] h-[90vh] overflow-y-scroll">
       <h1 className="text-center text-4xl my-5 ">
-        Students of {data?.grade}th Grade
+        Students of {data?.grade}th Grade & YEAR: {data?.year}
       </h1>
       <div className="overflow-x-auto">
         <table className="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
@@ -154,12 +166,19 @@ const EachClass = () => {
           </tbody>
         </table>
       </div>
-      <div onClick={deleteThisClass}  className="flex justify-center items-center bottom-5 fixed">
-        <DeleteBtn name={'DELETE'} color="red" navigate="/class" />
+      
+
+      <StudentGenderChart maleCount={maleNo} femaleCount={femaleNo} />
+
+      <div className="flex justify-between items-end my-10 mx-5">
+      <div onClick={deleteThisClass}  className="flex justify-center items-center ">
+        <DeleteBtn name={'DELETE'} color="red"  />
       </div>
 
-      <div  className="flex justify-center items-center bottom-5 right-20 fixed">
-        <DeleteBtn name={'EDIT'} color="green" navigate={`/class/grade/edit/${data.grade}`} />
+      <div onClick={()=>navigate(`/class/grade/edit/${data.grade}` )} className="flex justify-center items-center ">
+        <DeleteBtn name={'EDIT'} color="green"  />
+      </div>
+
       </div>
     </div>
   );

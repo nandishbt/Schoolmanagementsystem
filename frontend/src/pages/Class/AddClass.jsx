@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { addClass, addTeacher, getAllTeachers } from "../../utils/api";
+import { useNavigate } from "react-router-dom";
 
 const AddClass = () => {
+ const navigate = useNavigate()
   const [teachers, setteachers] = useState([])
   const [formData, setFormData] = useState({
     grade: "",
@@ -48,6 +50,8 @@ const AddClass = () => {
       studentFees: "",
       subjectData: [{ subject: "", teacher: "" }],
     });
+
+    navigate('/')
 
 
   };

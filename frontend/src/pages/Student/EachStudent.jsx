@@ -67,7 +67,7 @@ const EachStudent = () => {
     try {
       const res = await deleteStudent(rollno)
 
-      navigate(-1)
+      navigate('/')
       
     } catch (error) {
       console.error(error)
@@ -159,8 +159,8 @@ const EachStudent = () => {
         <DeleteBtn name={'DELETE'} color='red' />
       </div>
 
-      <div  className="flex justify-center items-center bottom-5 right-20 fixed">
-        <DeleteBtn name={'EDIT'} color="green" navigate={`/students/student/edit/${data.rollNo}`} />
+      <div onClick={()=>navigate(`/students/student/edit/${data.rollNo}`)}  className="flex justify-center items-center bottom-5 right-20 fixed">
+        <DeleteBtn name={'EDIT'} color="green"  />
       </div>
    
   
