@@ -269,7 +269,8 @@ const updateStudent = async (req,res) => {
                 dob: new Date(dob),
                 rollNo: Number(roll),
                 class: assignedClass._id,
-                feesPaid: Number(feesPaid)
+                feesPaid: Number(feesPaid),
+                grade:Number(grade)
             }
         })
 

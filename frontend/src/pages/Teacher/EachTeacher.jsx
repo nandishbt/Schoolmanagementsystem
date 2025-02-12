@@ -150,7 +150,7 @@ const EachTeacher = () => {
         onClick={deleteThisTeacher}
         className="flex justify-center items-center bottom-5 fixed"
       >
-        <DeleteBtn />
+        <DeleteBtn name={'DELETE'} color="red"/>
       </div>
     </div>
   );

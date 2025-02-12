@@ -62,12 +62,13 @@ const EachClass = () => {
     try {
       const res = await deleteClass(grade);
 
-      navigate('/')
       
     } catch (error) {
       console.error(error);
     }
   };
+
+  
 
   useEffect(() => {
     fetch();
@@ -154,7 +155,11 @@ const EachClass = () => {
         </table>
       </div>
       <div onClick={deleteThisClass}  className="flex justify-center items-center bottom-5 fixed">
-        <DeleteBtn />
+        <DeleteBtn name={'DELETE'} color="red" navigate="/class" />
+      </div>
+
+      <div  className="flex justify-center items-center bottom-5 right-20 fixed">
+        <DeleteBtn name={'EDIT'} color="green" navigate={`/class/grade/edit/${data.grade}`} />
       </div>
     </div>
   );

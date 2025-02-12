@@ -156,8 +156,13 @@ const EachStudent = () => {
   </div>
   
   <div onClick={deleteThisStudent}  className="flex justify-center items-center bottom-5 fixed">
-        <DeleteBtn />
+        <DeleteBtn name={'DELETE'} color='red' />
       </div>
+
+      <div  className="flex justify-center items-center bottom-5 right-20 fixed">
+        <DeleteBtn name={'EDIT'} color="green" navigate={`/students/student/edit/${data.rollNo}`} />
+      </div>
+   
   
   </div>
   )
