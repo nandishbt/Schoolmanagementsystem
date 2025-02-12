@@ -69,8 +69,8 @@ const EachTeacher = () => {
   }, []);
   return (
     <div className="w-[95vw] h-[90vh] overflow-y-scroll">
-      <h1 className="text-center text-4xl my-5 ">
-        Details of {data?.teacher.name?.toUpperCase()}
+      <h1 className="text-center text-4xl my-5 capitalize font-bold ">
+        Details of {data?.teacher.name}
       </h1>
       <div className="flow-root p-5">
         <dl className="-my-3 divide-y divide-gray-100 text-sm">

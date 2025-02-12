@@ -26,8 +26,8 @@ const AllTeachers = () => {
   return (
     <div className="w-[95vw] h-[90vh] overflow-y-scroll">
 
-<h1 className="text-center text-4xl my-5 ">
-        Teachers of This School
+<h1 className="text-center text-4xl my-5 font-bold">
+        Teachers of this school
       </h1>
 
       <div className="overflow-x-auto">

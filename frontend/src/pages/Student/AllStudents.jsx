@@ -30,8 +30,8 @@ const AllStudents = () => {
   },[])
   return (
     <div className="w-[95vw] h-[90vh] overflow-y-scroll">
-       <h1 className="text-center text-4xl my-5 ">
-        Students of This School
+       <h1 className="text-center text-4xl my-5 font-bold ">
+        Students of this school
       </h1>
       <div className="overflow-x-auto">
         <table className="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">

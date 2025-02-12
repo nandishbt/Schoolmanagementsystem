@@ -92,14 +92,14 @@ const EachStudent = () => {
   },[])
   return (
     <div className="w-[95vw] h-[90vh] overflow-y-scroll">
-      <h1 className="text-center text-4xl my-5 ">
-        Details of {data.name.toUpperCase()}
+      <h1 className="text-center text-4xl my-5 font-bold capitalize">
+        Details of {data.name}
       </h1>
     <div className="flow-root p-5">
     <dl className="-my-3 divide-y divide-gray-100 text-sm">
       <div className="grid grid-cols-1 gap-1 py-3 even:bg-gray-50 sm:grid-cols-3 sm:gap-4">
         <dt className="font-medium text-gray-900 ">Name</dt>
-        <dd className="text-gray-700 sm:col-span-2">{data.name}</dd>
+        <dd className="text-gray-700 sm:col-span-2 capitalize">{data.name}</dd>
       </div>
   
       <div className="grid grid-cols-1 gap-1 py-3 even:bg-gray-50 sm:grid-cols-3 sm:gap-4">

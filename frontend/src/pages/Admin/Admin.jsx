@@ -8,6 +8,7 @@ import {
 
 import AdminCard from "../../components/adminCard";
 import FinancialChart from "../../components/FinancialChart ";
+import AnalyticsPage from "../../components/AnalyticsPage";
 
 const Admin = () => {
   const [data, setData] = useState({
@@ -41,7 +42,7 @@ const Admin = () => {
 
   return (
     <div className="w-[95vw] h-[90vh] overflow-y-scroll">
-      <h1 className="text-center text-4xl text-slate-900 my-5">Admin Dashboard</h1>
+      <h1 className="text-center text-4xl text-slate-900 my-5 font-bold ">Admin Dashboard</h1>
       <div className="flex flex-wrap justify-around">
       <AdminCard name='Total No Of Students' amount ={ data.totalStudents } />
       <AdminCard name='Total No Of Teachers' amount ={ data.totalTeachers } />
@@ -51,6 +52,7 @@ const Admin = () => {
 
       </div>
       <FinancialChart salaries={data.totalSalary} studentFees={data.totalFees} />
+      <AnalyticsPage />
 
       
       

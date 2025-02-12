@@ -27,7 +27,7 @@ const AllClass = () => {
   }, []);
   return (
     <div className="w-[95vw] h-[90vh] overflow-y-scroll">
-      <h1 className="text-center text-4xl my-5 text-slate-900">All Classes</h1>
+      <h1 className="text-center text-4xl my-5 text-slate-900 font-bold">All Classes</h1>
      
     <div className="w-full ">
     {

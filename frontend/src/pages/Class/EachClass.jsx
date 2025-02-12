@@ -88,8 +88,8 @@ const EachClass = () => {
 
   return (
     <div className="w-[95vw] h-[90vh] overflow-y-scroll">
-      <h1 className="text-center text-4xl my-5 ">
-        Students of {data?.grade}th Grade & YEAR: {data?.year}
+      <h1 className="text-center text-4xl my-5 font-bold">
+        Students of {data?.grade}th grade & year: {data?.year}
       </h1>
       <div className="overflow-x-auto">
         <table className="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
@@ -128,8 +128,8 @@ const EachClass = () => {
       </div>
 
 
-      <h1 className="text-center text-4xl my-5 mt-20">
-        Teachers of {data?.grade}th Grade
+      <h1 className="text-center text-4xl my-5 mt-20 font-bold">
+        Teachers of {data?.grade}th grade
       </h1>
       <div className="overflow-x-auto">
         <table className="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
