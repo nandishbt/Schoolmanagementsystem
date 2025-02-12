@@ -127,6 +127,9 @@ const getTeacherById = async (req, res) => {
       _id : 1
     })
 
+    //sort the gradesTeachertaking array
+    gradesTeachertaking.sort((a, b) => b.grade - a.grade);
+
 
     return res.status(200).json(new apiResponse(201,"data fetched successfully",{teacher,gradesTeachertaking}))
     

@@ -134,11 +134,13 @@ const EachStudent = () => {
 
       <div className="grid grid-cols-1 gap-1 py-3 even:bg-gray-50 sm:grid-cols-3 sm:gap-4">
         <dt className="font-medium text-gray-900">Teachers</dt>
-        {
-          data.teacherDetails.map((teacher, index)=>(
-            <dd key={index} className="text-gray-700 sm:col-span-2">{teacher.name}{'('+ teacher.assignedSubject.toUpperCase() + ')'}</dd>
-          ))
-        }
+        
+          
+            <dd className="text-gray-700 sm:col-span-2">{data.teacherDetails.map((teacher,index)=>(
+             <span>{teacher.name}{'('+ teacher.assignedSubject.toUpperCase() + ')' + ", " }</span>))} 
+            </dd>
+     
+        
      
       </div>
   

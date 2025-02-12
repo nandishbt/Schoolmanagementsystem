@@ -149,6 +149,10 @@ const getClasses = async (req, res) => {
     if (!classesData) {
       return res.status(404).json({ message: "No classes found" });
     }
+
+    //sort classes by grade
+    classesData.sort((a, b) => a.grade - b.grade);
+    
     return res
       .status(200)
       .json(new apiResponse(200, "Classes found", classesData));
