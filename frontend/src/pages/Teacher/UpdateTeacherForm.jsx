@@ -89,7 +89,8 @@ const[previousData,setpreviousData] = useState()
 
   },[])
   return (
-    <form onSubmit={handleSubmit} className="p-6 bg-white rounded-lg shadow-md space-y-4">
+    <div className="w-[95vw] h-[90vh] overflow-y-scroll">
+    <form onSubmit={handleSubmit} className="w-1/2 mx-auto mt-10 p-6 bg-white rounded-lg shadow-md space-y-4">
       <div>
         <label className="block text-sm font-medium">Name:</label>
         <input
@@ -189,5 +190,6 @@ const[previousData,setpreviousData] = useState()
         Update Teacher
       </button>
     </form>
+    </div>
   );
 }
